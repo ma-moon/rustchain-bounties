@@ -1,0 +1,295 @@
+{
+  "info": {
+    "name": "RustChain REST API",
+    "description": "Complete Postman Collection for RustChain blockchain platform API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{api_key}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.rustchain.org/v1",
+      "type": "string"
+    },
+    {
+      "key": "testnet_url",
+      "value": "https://testnet-api.rustchain.org/v1",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "description": "System health and status endpoints",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            },
+            "description": "Returns the health status of the node"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has status field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.status).to.exist;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blockchain",
+      "description": "Blockchain data endpoints",
+      "item": [
+        {
+          "name": "Get Current Epoch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/epoch",
+              "host": ["{{base_url}}"],
+              "path": ["epoch"]
+            },
+            "description": "Returns information about the current epoch"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has epoch field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.epoch).to.exist;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Block by Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/block/{{block_number}}",
+              "host": ["{{base_url}}"],
+              "path": ["block", "{{block_number}}"]
+            },
+            "description": "Returns information about a specific block"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has block number\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.number).to.eql(parseInt(pm.variables.replaceIn(\"{{block_number}}\")));",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mining",
+      "description": "Mining-related endpoints",
+      "item": [
+        {
+          "name": "List Miners",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/miners?limit={{limit}}&offset={{offset}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "miners"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "description": "Number of miners to return"
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "description": "Offset for pagination"
+                }
+              ]
+            },
+            "description": "Returns a list of active miners on the network"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Wallet",
+      "description": "Wallet and transaction endpoints",
+      "item": [
+        {
+          "name": "Get Wallet Balance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wallet/balance?address={{wallet_address}}",
+              "host": ["{{base_url}}"],
+              "path": ["wallet", "balance"],
+              "query": [
+                {
+                  "key": "address",
+                  "value": "{{wallet_address}}",
+                  "description": "Wallet address to query"
+                }
+              ]
+            },
+            "description": "Returns the balance of a specified wallet address"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has balance field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.balance).to.exist;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "List Transactions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions?address={{wallet_address}}&limit={{limit}}",
+              "host": ["{{base_url}}"],
+              "path": ["transactions"],
+              "query": [
+                {
+                  "key": "address",
+                  "value": "{{wallet_address}}",
+                  "description": "Wallet address to query transactions for"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "description": "Number of transactions to return"
+                }
+              ]
+            },
+            "description": "Returns transactions for a given address"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attestation",
+      "description": "Attestation-related endpoints",
+      "item": [
+        {
+          "name": "Submit Attestation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"type\": \"example_attestation\",\n    \"payload\": \"sample_data\"\n  },\n  \"signature\": \"0x...\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/attest/submit",
+              "host": ["{{base_url}}"],
+              "path": ["attest", "submit"]
+            },
+            "description": "Submit a new attestation to the network"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has tx_hash\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.tx_hash).to.exist;",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

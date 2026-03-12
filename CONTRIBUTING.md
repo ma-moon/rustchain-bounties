@@ -1,28 +1,52 @@
 # Contributing to Rustchain
 
+[![Bounties](https://img.shields.io/github/issues/Scottcjn/rustchain-bounties/bounty?label=open%20bounties&color=brightgreen)](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
+[![RTC Pool](https://img.shields.io/badge/RTC%20Pool-5%2C900%2B%20RTC-gold)](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
+
 Thank you for your interest in contributing to Rustchain! Every contribution helps build a stronger Proof-of-Antiquity blockchain ecosystem.
+
+**All contributions earn RTC tokens** — browse [open bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty) to find paid tasks.
 
 ## 🚀 Quick Start
 
-1. **Fork** the repository
-2. **Clone** your fork locally
-3. **Create a branch** for your changes (`git checkout -b feature/my-contribution`)
-4. **Make your changes** and test them
-5. **Commit** with a clear message
-6. **Push** to your fork and open a **Pull Request**
+1. **Browse bounties**: Check [open bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty) for paid tasks
+2. **Claim**: Comment "I would like to work on this" on an issue
+3. **Fork** the repository
+4. **Clone** your fork locally
+5. **Create a branch** for your changes (`git checkout -b feature/my-contribution`)
+6. **Make your changes** and test them
+7. **Commit** with a clear message
+8. **Push** to your fork and open a **Pull Request**
+9. **Get paid**: RTC tokens sent after merge!
+
+### 💬 Need Help?
+
+- **Discord**: [Join our server](https://discord.gg/VqVVS2CW9Q) for real-time help
+- **GitHub Issues**: Ask questions on the bounty issue
+- **First time?** Comment on any bounty and we'll help you set up an RTC wallet
 
 ## 💰 Earning RTC Tokens
 
-All merged contributions earn RTC tokens! See the bounty tiers:
+All merged contributions earn RTC tokens! **Reference rate: 1 RTC = $0.10 USD**
 
-| Tier | Reward | Examples |
-| ---- | ------ | -------- |
-| Micro | 1-10 RTC | Typo fix, small docs, simple test |
-| Standard | 20-50 RTC | Feature, refactor, new endpoint |
-| Major | 75-100 RTC | Security fix, consensus improvement |
-| Critical | 100-150 RTC | Vulnerability patch, protocol upgrade |
+### Bounty Tiers
 
-Browse [open bounties](https://github.com/Scottcjn/rustchain-bounties/issues) to find tasks with specific RTC rewards.
+| Tier | Reward (RTC) | USD Value | Examples |
+| ---- | ------ | ------ | -------- |
+| Micro | 1-10 RTC | $0.10-$1.00 | Typo fix, small docs, simple test, star bounty |
+| Standard | 10-50 RTC | $1-$5 | Feature, refactor, new endpoint, tutorial |
+| Major | 50-200 RTC | $5-$20 | Security fix, consensus improvement, integration |
+| Critical | 200-500 RTC | $20-$50 | Vulnerability patch, protocol upgrade, red team |
+
+### How to Claim Bounties
+
+1. Find an [open bounty](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty)
+2. Comment: **"I would like to work on this"**
+3. Complete the work per acceptance criteria
+4. Submit PR or proof links
+5. Receive RTC after verification
+
+**Wallet setup**: RTC wallets are simple string names (e.g., `my-cool-wallet`). First-time contributors: comment on any bounty and we'll help you get started!
 
 ## 📋 Types of Contributions
 

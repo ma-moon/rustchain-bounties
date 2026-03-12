@@ -13,7 +13,7 @@
 
 [![Total Paid](https://img.shields.io/badge/Total%20Paid-22%2C756%20RTC-gold)](BOUNTY_LEDGER.md)
 
-[Browse All Bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty) · [Easy Bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) · [Red Team](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Ared-team) · [Payout Ledger](BOUNTY_LEDGER.md) · [What is RustChain?](https://github.com/Scottcjn/RustChain)
+[Browse All Bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Abounty) · [Easy Bounties](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) · [Red Team](https://github.com/Scottcjn/rustchain-bounties/issues?q=is%3Aissue+is%3Aopen+label%3Ared-team) · [Payout Ledger](BOUNTY_LEDGER.md) · [Contributing Guide](CONTRIBUTING.md) · [What is RustChain?](https://github.com/Scottcjn/RustChain)
 
 </div>
 
@@ -76,6 +76,7 @@ Once verified, RTC is sent to your wallet. First time? We will help you set one 
 | **RustChain** | [github.com/Scottcjn/RustChain](https://github.com/Scottcjn/RustChain) |
 | **Block Explorer** | [50.28.86.131/explorer](https://50.28.86.131/explorer) |
 | **Traction Report** | [Q1 2026 Developer Traction](https://github.com/Scottcjn/RustChain/blob/main/docs/DEVELOPER_TRACTION_Q1_2026.md) |
+| **Contributing Guide** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | **Discord** | [discord.gg/VqVVS2CW9Q](https://discord.gg/VqVVS2CW9Q) |
 | **Wallet Setup** | Comment on any bounty and we will help |
 
